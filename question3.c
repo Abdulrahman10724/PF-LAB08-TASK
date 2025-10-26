@@ -57,7 +57,6 @@ int main() {
         }
         printf("\n");
     }
-
     printf("\nSecond Matrix:\n");
     for(i = 0; i < r2; i++){
         for(j = 0; j < c2; j++){
@@ -65,7 +64,6 @@ int main() {
         }
         printf("\n");
     }
-
     printf("\nResultant Matrix (Multiplication):\n");
     for(i = 0; i < r1; i++){
         for(j = 0; j < c2; j++){
@@ -73,6 +71,5 @@ int main() {
         }
         printf("\n");
     }
-
     return 0;
 }

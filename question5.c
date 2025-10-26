@@ -5,7 +5,6 @@ int main() {
     int i, j, k;
     int same;
 
-    // Input 3D array
     printf("Enter elements for 3x3x3 array:\n");
     for(i = 0; i < 3; i++){
         printf("\nLayer %d:\n", i+1);
@@ -17,7 +16,7 @@ int main() {
         }
     }
 
-    // Display layers
+
     for(i = 0; i < 3; i++){
         printf("\nLayer %d:\n", i+1);
         for(j = 0; j < 3; j++){
@@ -28,8 +27,8 @@ int main() {
         }
     }
 
-    // Compare Layer 0 and Layer 1
-    same = 1;  // assume identical
+    //  Layer 0 and  1
+    same = 1;  
     for(j = 0; j < 3; j++){
         for(k = 0; k < 3; k++){
             if(arr[0][j][k] != arr[1][j][k]){
@@ -42,7 +41,7 @@ int main() {
     if(same) printf("\nLayer 1 and Layer 2 are IDENTICAL");
     else printf("\nLayer 1 and Layer 2 are DISTINCT");
 
-    // Compare Layer 0 and Layer 2
+    //  Layer 0 and  2
     same = 1;
     for(j = 0; j < 3; j++){
         for(k = 0; k < 3; k++){
@@ -56,7 +55,7 @@ int main() {
     if(same) printf("\nLayer 1 and Layer 3 are IDENTICAL");
     else printf("\nLayer 1 and Layer 3 are DISTINCT");
 
-    // Compare Layer 1 and Layer 2
+    //  Layer 1 and  2
     same = 1;
     for(j = 0; j < 3; j++){
         for(k = 0; k < 3; k++){

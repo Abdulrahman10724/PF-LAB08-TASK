@@ -2,11 +2,10 @@
 
 int main() {
     int arr[3][3][3];
-    int i, j, k;         // indices
+    int i, j, k;         
     int layerSum, total = 0;
     int layerMax, layerMin;
 
-    // Input elements
     printf("Enter elements for 3x3x3 array:\n");
     for(i = 0; i < 3; i++){
         printf("\nLayer %d:\n", i+1);
@@ -18,7 +17,6 @@ int main() {
         }
     }
 
-    // Layer-wise analysis
     printf("\n--- Layer-wise Analysis ---\n");
     for(i = 0; i < 3; i++){
         layerSum = 0;
@@ -42,7 +40,7 @@ int main() {
         printf("Layer Min: %d\n", layerMin);
     }
 
-    // Overall analysis
+
     printf("\n--- Overall Analysis ---\n");
     printf("Total of all layers: %d\n", total);
     printf("Average of all elements: %.2f\n", total / 27.0);

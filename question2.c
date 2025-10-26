@@ -23,17 +23,14 @@ int main() {
     }
 
 
-    // Check square or rectangular
     if(row == col)
         isSquare = 1;
     else
         isRectangular = 1;
 
-    // Check row matrix and column matrix
     if(row == 1) isRow = 1;
     if(col == 1) isCol = 1;
 
-    // Check zero, identity, diagonal, scalar
     for(i = 0; i < row; i++) {
         for(j = 0; j < col; j++) {
             if(matrix[i][j] != 0) isZero = 0;
@@ -51,7 +48,6 @@ int main() {
         }
     }
 
-    // Check upper and lower triangular (only for square)
     if(isSquare) {
         for(i = 0; i < row; i++) {
             for(j = 0; j < col; j++) {
@@ -64,7 +60,6 @@ int main() {
         isLower = 0;
     }
 
-    // Check symmetric and skew-symmetric
     if(isSquare) {
         for(i = 0; i < row; i++) {
             for(j = 0; j < col; j++) {
@@ -74,10 +69,9 @@ int main() {
         }
     } else {
         isSymmetric = 0;
-        isSkewSymmetric = 0;
+        isSkewSymmetric = 0;Z
     }
 
-    // Check singular/non-singular (only for 2x2 or 3x3 for simplicity)
     if(isSquare) {
         if(row == 2) {
             det = matrix[0][0]*matrix[1][1] - matrix[0][1]*matrix[1][0];
@@ -85,15 +79,13 @@ int main() {
             det = matrix[0][0]*(matrix[1][1]*matrix[2][2]-matrix[1][2]*matrix[2][1])
                 - matrix[0][1]*(matrix[1][0]*matrix[2][2]-matrix[1][2]*matrix[2][0])
                 + matrix[0][2]*(matrix[1][0]*matrix[2][1]-matrix[1][1]*matrix[2][0]);
-        } else det = 1; // default non-zero
+        } else det = 1; 
         if(det == 0) isSingular = 1;
     }
 
-    // Check null matrix
     if(isZero) isNull = 1;
     else isNull = 0;
 
-    // Check idempotent (A*A = A) and nilpotent (A*A = 0) for 2x2 only for simplicity
     if(isSquare && row == 2) {
         int a = matrix[0][0], b = matrix[0][1], c = matrix[1][0], d = matrix[1][1];
         int m2[2][2];
@@ -111,23 +103,41 @@ int main() {
     }
 
     printf("\nMatrix Types:\n");
-    if(isSquare) printf("Square Matrix\n");
-    if(isRectangular) printf("Rectangular Matrix\n");
-    if(isZero) printf("Zero Matrix\n");
-    if(isIdentity) printf("Identity Matrix\n");
-    if(isDiagonal) printf("Diagonal Matrix\n");
-    if(isScalar) printf("Scalar Matrix\n");
-    if(isUpper) printf("Upper Triangular Matrix\n");
-    if(isLower) printf("Lower Triangular Matrix\n");
-    if(isSymmetric) printf("Symmetric Matrix\n");
-    if(isSkewSymmetric) printf("Skew-Symmetric Matrix\n");
-    if(isSingular) printf("Singular Matrix\n");
-    else if(isSquare) printf("Non-Singular Matrix\n");
-    if(isRow) printf("Row Matrix\n");
-    if(isCol) printf("Column Matrix\n");
-    if(isNull) printf("Null Matrix\n");
-    if(isIdempotent) printf("Idempotent Matrix\n");
-    if(isNilpotent) printf("Nilpotent Matrix\n");
+    if(isSquare) 
+	printf("Square Matrix\n");
+    if(isRectangular) 
+	printf("Rectangular Matrix\n");
+    if(isZero) 
+	printf("Zero Matrix\n");
+    if(isIdentity) 
+	printf("Identity Matrix\n");
+    if(isDiagonal) 
+	printf("Diagonal Matrix\n");
+    if(isScalar) 
+	printf("Scalar Matrix\n");
+    if(isUpper) 
+	printf("Upper Triangular Matrix\n");
+    if(isLower) 
+	printf("Lower Triangular Matrix\n");
+    if(isSymmetric) 
+	printf("Symmetric Matrix\n");
+    if(isSkewSymmetric) 
+	printf("Skew-Symmetric Matrix\n");
+    if(isSingular) 
+	printf("Singular Matrix\n");
+    else if(isSquare)
+	 printf("Non-Singular Matrix\n");
+    if(isRow) 
+	printf("Row Matrix\n");
+    if(isCol) 
+	printf("Column Matrix\n");
+    if(isNull) 
+	printf("Null Matrix\n");
+    if(isIdempotent) 
+	printf("Idempotent Matrix\n");
+    if(isNilpotent) 
+	printf("Nilpotent Matrix\n");
+
 
     return 0;
 }

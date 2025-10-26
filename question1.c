@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include <math.h>
+
 
 int main() {
     float mat[3][3], trans[3][3], cof[3][3], adj[3][3], inv[3][3];
     float det;
-    int i, j, r, c;
+    int i, j, r, c,x,y;
 
     // Input matrix
     printf("Enter 3x3 matrix values:\n");
@@ -45,10 +47,10 @@ int main() {
         for(j=0;j<3;j++){
             float sub[2][2];
             r=0;
-            for(int x=0;x<3;x++){
+            for(x=0;x<3;x++){
                 if(x==i) continue;
                 c=0;
-                for(int y=0;y<3;y++){
+                for(y=0;y<3;y++){
                     if(y==j) continue;
                     sub[r][c] = mat[x][y];
                     c++;
